@@ -1,4 +1,0 @@
-Firefox-TTAGIT-Extension
-========================
-
-Firefox
