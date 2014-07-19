@@ -1,0 +1,8 @@
+content ttagit content/ttagit/
+content ttagit content/ttagit/ contentaccessible=yes
+
+locale  ttagit en-US  locale/en-US/
+skin    ttagit classic/1.0 skin/
+
+overlay chrome://browser/content/browser.xul chrome://ttagit/content/overlay.xul
+style chrome://global/content/customizeToolbar.xul chrome://ttagit/skin/ttagit.css

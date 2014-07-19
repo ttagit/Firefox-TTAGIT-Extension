@@ -1,0 +1,56 @@
+#ttagit-button, #ttagit-button[active="yes"]  {
+	/*list-style-image: url("chrome://ttagit/skin/ttagit.png");
+	-moz-image-region: rect(0px 24px 24px 0px);*/
+	list-style-image: url("chrome://ttagit/skin/tweeticon.png");
+	-moz-image-region: rect(0px 16px 16px 0px);
+}
+#ttagit-button[active="no"] {
+	/*list-style-image: url("chrome://ttagit/skin/ttagit_g.png");
+	-moz-image-region: rect(0px 24px 24px 0px);*/
+	list-style-image: url("chrome://ttagit/skin/ttagit_g16.png");
+	-moz-image-region: rect(0px 16px 16px 0px);
+}
+/*
+toolbar[iconsize="small"] #ttagit-button, toolbar[iconsize="small"] #ttagit-button[active="yes"] {
+	list-style-image: url("chrome://ttagit/skin/tweeticon.png");
+	-moz-image-region: rect(0px 16px 16px 0px);
+}
+
+toolbar[iconsize="small"] #ttagit-button[active="no"] {
+	list-style-image: url("chrome://ttagit/skin/ttagit_g16.png");
+	-moz-image-region: rect(0px 16px 16px 0px);
+}
+*/
+
+#ttagit-button:hover {
+	/*-moz-image-region: rect(0px 24px 24px 0px);*/
+	-moz-image-region: rect(0px 16px 16px 0px);
+}
+
+#ttagit-button-text {
+    -moz-box-sizing: border-box;
+    display:none;
+	font-size: 11px;
+    padding: 0 3px;
+	margin: 3px 10px -5px -8px;
+    line-height: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 0 0 1px #EEF1F7;
+    color: #ffffff;
+	font-weight: bold;
+    border-radius: 3px;
+    background-color: rgba(255, 0, 0, 0.9);
+    box-shadow: inset 0px 0px 1px white;
+    background-image: -moz-linear-gradient(
+        center bottom,
+        #cc0000/*#DBE1EB*/ 0%,
+        #eb2121/*#DEE4EB*/ 80%,
+        #eb5c5c/*#E7EBF3*/ 81%
+    );
+    border-width: 1px;
+    border-style: solid;
+    border-color: #990000;
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.3) inset,
+                0 1px 0 rgba(180, 189, 202, 0.7),
+                0 0 3px rgba(153, 0, 0, 0.9);
+}

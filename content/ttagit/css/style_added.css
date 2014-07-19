@@ -1,0 +1,217 @@
+/* enter password on securre account */
+#welcomeMessage #secureaccount { display: none; }
+#welcomeMessage #secureaccount label { color: white; padding: 5px 0 0 3px; font-size: 12px; text-shadow: 1px 1px 0 #666666; }
+#welcomeMessage #secureaccount input[type="password"] { width: 98%; }
+
+/* Error messages */
+#directMessage p.upload_error{ color:#dac227;  padding: 5px 0 5px 3px; font-size: 12px; text-shadow: 1px 1px 0 #666666; font-weight: bold; display: none; }
+.modalBox p.password_error, .modalBox p.pin_error_incomplete, .modalBox p.pin_error_novalid, .modalBox p.permit_access_first, .modalBox p.twitter_communication_problem, .modalBox .genericError
+{color:#dac227;  padding: 5px 0 0 3px; font-size: 12px; text-shadow: 1px 1px 0 #666666; font-weight: bold; display: none; }
+
+/*Preferences */
+#Preferences .twitterValidation { margin: 0 auto; padding: 10px 0; list-style: none; width: 100%; }
+#Preferences  label { color: white; font-size: 12px; text-shadow: 1px 1px 0px #666; }
+#Preferences .twitterValidation li { padding: 5px;}
+#Preferences .line, #Preferences .line .secureIt { padding-top: 5px; padding-left: 5px; }
+#Preferences .line .secureIt input[type="password"] { width: 94%; }
+#Preferences .line.paddingBottomMore { padding-bottom: 15px; }
+#addNewUser .line label { color: white; font-size: 12px; text-shadow: 1px 1px 0px #666; }
+
+/*wait page */
+#PleaseWait #ladingfirstPage {display: block;}
+#PleaseWait #ladingfirstPage img { padding-top:30px; width:150px; }
+
+.unlockButtons {
+	margin-top: 30px;
+}
+
+/*Unlock page*/
+.unlockButton{
+	margin: 30px 15% 2px 15%;
+	text-align:center;
+	font: bold 18px Arial,Helvetica,sans-serif;
+	background: #005ED2;
+	border-radius: 3px;
+	height: 23px;
+	padding: 3px 0 3px 0;
+
+	cursor: pointer;
+}
+
+#UnlockPage #ladingfirstPage {display: block;}
+.unlockBox { max-height:148px; width: 90%; position: absolute; left: 0%; top: 0%;margin: 130px 6.5% 0 3.5%; z-index: 110;  min-width: 210px; display: none;
+	padding: 10% 4px 10% 4px;
+	background: rgba(0,0,0,0.8);
+	font: bold 24px Arial,Helvetica,sans-serif;
+	color: white;
+	text-align: center;
+	padding-bottom: 5px;
+	border-radius: 5px;
+	z-index: 1000;
+}
+
+#UnlockMsg #ladingfirstPage {display: block;}
+.unlockBoxMsg { max-height:120px; width: 90%; position: absolute; left: 0%; bottom: 0%; margin: 100px 6.5% 10px 3.5%; z-index: 110;  min-width: 210px; display: none;
+	padding: 4px 4px 4px 4px;
+	background: rgba(0,0,0,0.8);
+	font-size: 13px;
+	color: white;
+	line-height: 20px;
+	text-align: left;
+	border-radius: 5px;
+	z-index: 1000;
+}
+
+#searchtweets { display: block;}
+#addNewUserWhait {display: none;}
+
+/* Empty timeline */
+.tab_content .timeline .noTweetsToShow { text-align: center; padding: 30px; font-weight: bold; }
+
+/* send dirrect message: link on conevsation and lists*/
+.WriteNewMessage { padding: 0 0 6px 8px!important; }
+.WriteNewMessage a { font-size: 11px; color: #878787; display: block; text-decoration: none; background: url(../img/email.gif) no-repeat 0 6px; padding: 3px 0 0 14px; }
+.WriteNewMessage a:hover { text-decoration: underline; }
+ul#conversationtweets > li.WriteNewMessage, ul#dmtweets > li.WriteNewMessage{ min-height: 0px; }
+
+/* DM to any user*/
+#directMessageUser .interiorPadding { padding-left: 3%; }
+
+#directMessageUser .centerme-nop { margin: 0 auto; background: linear-gradient(center top , #404448 0%, #212121 100%); background: -moz-linear-gradient(center top , #404448 0%, #212121 100%) repeat scroll 0 0 transparent; box-shadow: 1px 1px 1px 0 #000000 inset, 0 1px; height: 30px; }
+
+#directMessageUser .arroba { color: #FFFFFF; font-size: 22px; font-weight: bold; padding-left: 5px; padding-top: 3px; position: absolute; }
+
+#directMessageUser #direct_message_from { padding-left: 30px; background: transparent;  box-shadow: none; font-size: 17px; width: 90% }
+
+#resultUser{ background-color: #565656; display: block; margin: 0 auto; overflow: hidden; background: linear-gradient(center top , #404448 0%, #353535 100%) ; background: -moz-linear-gradient(center top , #404448 0%, #353535 100%) repeat scroll 0 0 transparent; border-radius: 0px 0px 5px 5px; }
+#resultUser a{ display: block; width: 0; text-decoration: none;}
+#resultUser a span {padding: 2px 0 4px 3px;  font-size: 14px;}
+#resultUser a .user_id{ display: none; }
+
+/*DM coversation lists: counter format*/
+#dms ul.dms li p { font-size:22px; font-weight: bold; color: #565656; font-style: italic; padding: 10px 0 10px 5px; }
+
+
+/*Dropdown menu fix */
+.mainWindow .dropdownMenu { width: 150px; list-style: none; }
+.mainWindow .paddingForMenu { display: none; padding: 10px; position: absolute; z-index: 100; }
+
+#searchbox .dropdownMenu { width: 150px; list-style: none; }
+#searchbox .paddingForMenu { display: none; padding: 10px; position: absolute; z-index: 100; }
+
+/*Separator line on new tweets*/
+ul.timeline > li.separator {border-bottom: 2px solid #ADD8E6;}
+ul.timeline > li.separator:after { content: "\25B2 new tweets \25B2"; font-size: 10px; text-align: center; color: #858585; width: 105%; height: 11px; margin: 8px 0 -8px 0; padding: 0px; background-color: aliceblue; }
+
+/*mentions to user*/
+ul.timeline > li.mention {
+	background: red;
+	background: -moz-linear-gradient(top, #FCF2B6 0%, #f1f1f1 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FCF2B6), color-stop(100%,#f1f1f1));
+	background: -webkit-linear-gradient(top, #FCF2B6 0%,#f1f1f1 100%);
+	background: linear-gradient(top, #FCF2B6 0%,#f1f1f1 100%);
+}
+
+/*added conversation icon on tweets with reply_to_status_is*/
+ul.timeline li .infoBar .conv { font-size: 10px; color: #878787; display: inline-block; background: url(../img/conv.png) no-repeat 0 9px; padding: 10px 0 0 19px; text-decoration: none; }
+
+/*modification to tweet actions (retweet with comments y reply all)*/
+ul.timeline li .infoBar .actions a.reply { height: 18px; width: 15px;  background: url(../img/twitterIcons.png) no-repeat 0 -2px; display: inline-block; position: absolute; left: 0; top: 6px; outline: none; }
+ul.timeline li .infoBar .actions a.reply.moreLeft {left: 37px;}
+ul.timeline li .infoBar .actions a.reply:hover { background-position: -16px -2px;  }
+
+ul.timeline li .infoBar .actions a.replyAll { height: 18px; width: 15px;  background: url(../img/twitterIcons2.png) no-repeat -3px -2px; display: inline-block; position: absolute; left: 18px; top: 6px; outline: none; }
+ul.timeline li .infoBar .actions a.replyAll.moreLeft {left: 56px;}
+ul.timeline li .infoBar .actions a.replyAll:hover { background-position: -19px -2px;  }
+
+ul.timeline li .infoBar .actions a.retweet { height: 18px; width: 15px; background: url(../img/twitterIcons.png) no-repeat -80px 2px; display: inline-block; margin-right: 3px; position: absolute; left: 37px; top: 3px; outline: none; }
+ul.timeline li .infoBar .actions a.retweet:hover, ul.timeline li .infoBar .actions a.retweet.retweeted { background-position: -96px 2px; }
+
+ul.timeline li .infoBar .actions a.retweetComment { height: 18px; width: 17px;  background: url(../img/twitterIcons2.png) no-repeat -80px 2px; display: inline-block; position: absolute; left: 56px; top: 3px; outline: none; }
+ul.timeline li .infoBar .actions a.retweetComment:hover {  background-position: -96px 2px; }
+
+ul.timeline li .infoBar .actions a.favorite { height: 18px; width: 15px; background: url(../img/twitterIcons.png) no-repeat -33px 0; display: inline-block; position: absolute; left: 75px; top: 3px; outline: none; }
+ul.timeline li .infoBar .actions a.favorite:hover { background-position: -49px 0px; }
+ul.timeline li .infoBar .actions a.favorite.active { background-position: -65px 0; }
+
+/* actions for DM */
+ul.timeline li .infoBar .actions a.deleteDM { height: 18px; width: 15px; background: url(../img/twitterIcons3.png) no-repeat -84px 0; display: inline-block; position: absolute; left: 75px; top: 3px; outline: none; }
+ul.timeline li .infoBar .actions a.deleteDM:hover { background-position: -98px 0px; }
+ul.timeline li .infoBar .actions a.deleteDM.active { background-position: -98px 0; }
+
+/*MUTED USER LIST BOX*/
+#mutedUsers .mutedUserList { margin: 8px 0 0 0; padding: 0 0 5px 0; }
+#mutedUsers .mutedUserList img { width: 38px; height: 38px; }
+#mutedUsers .mutedUserList li { position: relative; list-style: none; height: 50px; margin: 0 0 9px 0; cursor: pointer;
+	background: #292828;
+	background: -moz-linear-gradient(top, #292828 0%, #181818 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#292828), color-stop(100%,#181818));
+	background: -webkit-linear-gradient(top, #292828 0%,#181818 100%);
+	background: linear-gradient(top, #292828 0%,#181818 100%);
+	-webkit-box-shadow: inset 1px 1px 1px 0px #000000, 0px 1px 1px 0px rgba(255,255,255,0.2);
+	-moz-box-shadow: inset 1px 1px 1px 0px #000000, 0px 1px 1px 0px rgba(255,255,255,0.2);
+	box-shadow: inset 1px 1px 1px 0px #000000, 0px 1px 1px 0px rgba(255,255,255,0.2);
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+#mutedUsers .mutedUserList li:hover {
+	background: #404448;
+	background: -moz-linear-gradient(top, #404448 0%, #212121 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#404448), color-stop(100%,#212121));
+	background: -webkit-linear-gradient(top, #404448 0%,#212121 100%);
+	background: -o-linear-gradient(top, #404448 0%,#212121 100%);
+	background: linear-gradient(top, #404448 0%,#212121 100%);
+}
+
+#mutedUsers .mutedUserList li:hover .close { display: block; position: absolute; top: 1px; right: 1px; width: 13px; height: 13px; background: url(../img/usersClose.png) no-repeat center; }
+#mutedUsers .mutedUserList li img { position: absolute; top: 6px; left: 6px; }
+#mutedUsers .mutedUserList li .username { color: white; font-size: 15px; position: absolute; left: 52px; top: 16px; }
+#mutedUsers .hiddenConfirmation { position: absolute; top: 0; left: 0; display: none; width: 100%; }
+#mutedUsers .hiddenConfirmation .message { position: absolute; text-align: center; left: 2px; top: 10px; width: 130px; font-style: normal; font-size: 12px; line-height: 14px; }
+#mutedUsers .hiddenConfirmation .confirm { display: block; color: black; font-size: 12px; padding: 5px 10px; text-decoration: none; position: absolute; right: 75px; top: 13px;
+	background: #f3eea8;
+	background: -moz-linear-gradient(top, #f3eea8 0%, #eade39 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f3eea8), color-stop(100%,#eade39));
+	background: -webkit-linear-gradient(top, #f3eea8 0%,#eade39 100%);
+	background: linear-gradient(top, #f3eea8 0%,#eade39 100%);
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.6), 1px 2px 2px 0px rgba(0,0,0,0.4);
+	-moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.6), 1px 2px 2px 0px rgba(0,0,0,0.4);
+	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.6), 1px 2px 2px 0px rgba(0,0,0,0.4);
+	text-shadow: 0px 1px 0px rgba(255,255,255,0.7);
+}
+
+#mutedUsers .hiddenConfirmation .cancel { display: block; color: black; font-size: 12px; padding: 5px 10px; text-decoration: none; position: absolute; right: 10px; top: 13px;
+	background: #f2f2f2;
+	background: -moz-linear-gradient(top, #f2f2f2 0%, #a8a8a8 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f2f2), color-stop(100%,#a8a8a8));
+	background: -webkit-linear-gradient(top, #f2f2f2 0%,#a8a8a8 100%);
+	background: linear-gradient(top, #f2f2f2 0%,#a8a8a8 100%);
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.6), 1px 2px 2px 0px rgba(0,0,0,0.4);
+	-moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.6), 1px 2px 2px 0px rgba(0,0,0,0.4);
+	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.6), 1px 2px 2px 0px rgba(0,0,0,0.4);
+	text-shadow: 0px 1px 0px rgba(255,255,255,0.7);
+}
+
+/*tends??*/
+
+.trendName {
+	font: 14px #53C4F1;
+}
+.trendQuery {
+	display: none;
+}
+
+/* image on tweets */
+	ul.timeline li p img {
+	left: 0px;
+	top: 8px;
+	width:97%;
+	position: relative;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
