@@ -1,8 +1,8 @@
 addon.port.on("pinSaved", function(isSucccess) {
-  if (isSuccess === true)
-        alert("Authorized, woot!");
-      else
-        alert("There was some problem.");
+  //if (isSuccess === true)
+        alert("Authorized, woot!",localStorage.getItem('ttagitStorage'));
+    //  else
+      //  alert("There was some problem.");
 });
 
 $(function(){

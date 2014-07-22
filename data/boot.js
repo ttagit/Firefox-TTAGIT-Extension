@@ -38,6 +38,7 @@ function getTwitterAPI() {
 //console.log("HITESHJOSHIISTHEBEST",document.referrer.match(/oauth_consumer_key=([^&]+)/));
 
 (function(undefined) {
+  console.log('clicked');
   var twitter = getTwitterAPI();
 
   var loginFormElement = document.querySelector("#twitter-login");

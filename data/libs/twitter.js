@@ -3,21 +3,29 @@ const TWITTER_USER_ID_STORAGE_KEY = "userid";
 var Twitter = function() {};
 
 Twitter.prototype.getAccessToken = function() {
-  var accessToken = localStorage.getItem(ACCESS_TOKEN_STORAGE_KEY);
+  self.port.emit('getAccessToken','ACCESS_TOKEN_STORAGE_KEY');
 
-  return _.isString(accessToken) ? accessToken : null;
+  self.port.on('receiveToken',function(token){
+    return _.isString(token) ? token : null;
+  });
 };
 
 Twitter.prototype.getAccessTokenSecret = function() {
-  var accessTokenSecret = localStorage.getItem(ACCESS_TOKEN_SECRET_STORAGE_KEY);
+  self.port.emit('getAccessTokenSecret','ACCESS_TOKEN_SECRET_STORAGE_KEY');
 
-  return _.isString(accessTokenSecret) ? accessTokenSecret : null;
+  self.port.on('receiveTokenSecret',function(token){
+    return _.isString(token) ? token : null;
+  });
+  
 };
 
 Twitter.prototype.getUserID = function() {
-  var userid = Number(localStorage.getItem(TWITTER_USER_ID_STORAGE_KEY));
 
-  return (_.isNumber(userid) && !_.isNaN(userid)) ? userid : null;
+  self.port.emit('getUserID','TWITTER_USER_ID_STORAGE_KEY');
+
+  self.port.on('receiveUserID',function(userid){
+    return (_.isNumber(userid) && !_.isNaN(userid)) ? userid : null;
+  });
 };
 
 Twitter.prototype.parseToken = function(data) {
@@ -168,9 +176,12 @@ Twitter.prototype.sign = function(pin, cb) {
 };
 
 Twitter.prototype.save = function(accessToken, accessTokenSecret, userid) {
-  localStorage.setItem(ACCESS_TOKEN_STORAGE_KEY, accessToken);
-  localStorage.setItem(ACCESS_TOKEN_SECRET_STORAGE_KEY, accessTokenSecret);
-  localStorage.setItem(TWITTER_USER_ID_STORAGE_KEY, userid);
+  var data = {
+    ACCESS_TOKEN_STORAGE_KEY:accessToken,
+    ACCESS_TOKEN_SECRET_STORAGE_KEY:accessTokenSecret,
+    TWITTER_USER_ID_STORAGE_KEY:userid
+  }
+  self.port.emit('saveData',data);
 };
 
 Twitter.prototype.isAuthenticated = function() {
