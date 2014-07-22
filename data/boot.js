@@ -49,6 +49,8 @@ function getTwitterAPI() {
 
   $("#loading").addClass('hide').removeClass('show');
 
+  console.log(twitter.isAuthenticated(),"^&&(*)&^%$^*()&^%$#&*()$&^%#$&*()*^%$#&*()IS USER LOGGED IN ^&&(*)&^%$^*()&^%$#&*()$&^%#$&*()*^%$#&*()");
+
   if (twitter.isAuthenticated()) {
     loginFormElement.style.display = "none";
 

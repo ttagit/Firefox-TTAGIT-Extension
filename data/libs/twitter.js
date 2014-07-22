@@ -117,11 +117,11 @@ Twitter.prototype.login = function() {
 
 Twitter.prototype.sign = function(pin, cb) {
   var that = this;
-  var requestToken = this.request_token;
-  var requestTokenSecret = this.request_token_secret;
+  var requestToken = that.request_token;
+  var requestTokenSecret = that.request_token_secret;
 
-  delete this.request_token;
-  delete this.request_token_secret;
+  delete that.request_token;
+  delete that.request_token_secret;
 
   var message = {
     "method": "GET",
@@ -134,6 +134,8 @@ Twitter.prototype.sign = function(pin, cb) {
     }
   };
 
+  console.log("(_(_(_(_(_(_(_(_(__(_(_ THE MESSAGE IS _)_)_)_)_)_)__)_)_)__)_", message);
+
   var accessor = {
     "consumerSecret": CONSUMER_SECRET,
     "tokenSecret": requestTokenSecret
@@ -142,20 +144,27 @@ Twitter.prototype.sign = function(pin, cb) {
   OAuth.setTimestampAndNonce(message);
   OAuth.SignatureMethod.sign(message, accessor);
 
-  $.ajax({
-    "type": "GET",
-    "url": OAuth.addToURL(message.action, message.parameters),
-    "success": $.proxy(function(data) {
-      var params = this.parseToken(data);
-
-      this.save(params.oauth_token, params.oauth_token_secret, params.user_id);
-
-      cb(true);
-    }, this),
-    "error": function(xhr, status, error) {
-      cb(false);
-    }
+  self.port.emit('confirmLogin',OAuth.addToURL(message.action, message.parameters));
+  self.port.on('loginConfirmed',function(data){
+    var params = that.parseToken(data);
+    that.save(params.oauth_token, params.oauth_token_secret, params.user_id);
+    cb(true);
   });
+
+  // $.ajax({
+  //   "type": "GET",
+  //   "url": OAuth.addToURL(message.action, message.parameters),
+  //   "success": $.proxy(function(data) {
+  //     var params = this.parseToken(data);
+
+  //     this.save(params.oauth_token, params.oauth_token_secret, params.user_id);
+
+  //     cb(true);
+  //   }, this),
+  //   "error": function(xhr, status, error) {
+  //     cb(false);
+  //   }
+  // });
 };
 
 Twitter.prototype.save = function(accessToken, accessTokenSecret, userid) {

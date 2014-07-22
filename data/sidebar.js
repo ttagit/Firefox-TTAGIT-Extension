@@ -7,7 +7,7 @@ addon.port.on("pinSaved", function(isSucccess) {
 
 $(function(){
 	$("#submit").click(function(){
-		alert($("#pin").val())
+		alert($("#pin").val());
 		addon.port.emit("savePin",$("#pin").val());
 	});
 })
