@@ -1,13 +1,6 @@
-addon.port.on("pinSaved", function(isSucccess) {
-  //if (isSuccess === true)
-        alert("Authorized, woot!",localStorage.getItem('ttagitStorage'));
-    //  else
-      //  alert("There was some problem.");
+addon.port.on('updatedUrl',function(url){
+	addon.port.emit('getUpdatedTweets');
 });
-
-$(function(){
-	$("#submit").click(function(){
-		alert($("#pin").val());
-		addon.port.emit("savePin",$("#pin").val());
-	});
-})
+addon.port.on('newTweets',function(tweets){
+	$("div").text(JSON.stringify(tweets));
+});
