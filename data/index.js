@@ -38,9 +38,9 @@ addon.port.on('sendTweet',function(data){
 addon.port.on('Followed',function(data){
 	$(loading).addClass('hide').removeClass('show');
     if(!data.alreadyFollowing)
-      $(data.followElement).attr('following','true').text("Unfollow @"+username);
+      $(data.followElement).attr('following','true').text("Unfollow @"+data.username);
     else
-      $(data.followElement).attr('following','false').text("Follow @"+username);
+      $(data.followElement).attr('following','false').text("Follow @"+data.username);
 });
 
 
