@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,12 +23,18 @@
         <p class="loadingInformation">
           
         </p>
-        <img src="ajax-loader.gif">
+        <img src="images/ajax-loader.gif">
       </div>
     </div>
 
-
     <div id="input">
+      
+    </div>
+
+    <div id="content" class="row">
+    </div>
+
+   <!--  <div id="input">
 	    <div id="newTweet" class="col-xs-12">
 	    	<form role="form">
 	    		<div class="form-group">
@@ -48,8 +54,9 @@
     	</div>
       
     	<div id="tweets" class="col-xs-12">
-	    	<div class="tweet border">
+	    	<div class="tweet border" ng:repeat="tweet in tweets">
 	    		<div class="rows">
+	    			{{tweet}}
 	    			<div class="tweet-icon col-xs-2">
 	    				<img src="https://pbs.twimg.com/profile_images/427556532985667585/Wb8KIV0K_normal.jpeg" class="img-rounded">
 	    			</div>
@@ -107,13 +114,11 @@
 	    		<div class="clearfix"></div>
 	    	</div>
 	    </div>
-	</div>
+	</div> -->
 
-    <script type="text/javascript" src="js/jquery.min.js">
-    </script>
-    <script type="text/javascript" src="index.js">
-    </script>
-    <script src="js/bootstrap.min.js">
-    </script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/underscore.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
