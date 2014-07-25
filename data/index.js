@@ -12,8 +12,6 @@ addon.port.on('updatedUrl',function(url){
 	addon.port.emit('getUpdatedTweets');
 });
 addon.port.on('newTweets',function(data){
-	console.log(data.tweets.statuses);
-
 	in_reply_to_status_id = null;
 	elm = document.querySelector("#content");
 	root = $("<div>").attr("id", "tweets").attr("class", "col-xs-12");
@@ -26,6 +24,37 @@ addon.port.on('newTweets',function(data){
 	renderTweets(data.tweets.statuses,data.url);
 });
 
+addon.port.on('newTweet',function(data){
+	tweets.unshift(data);
+    renderTweets();
+    $(tweetInput).find("textarea").val("");
+    $(loading).addClass('hide').removeClass('show');
+});
+
+addon.port.on('sendTweet',function(data){
+
+});
+
+addon.port.on('Followed',function(data){
+	$(loading).addClass('hide').removeClass('show');
+    if(!data.alreadyFollowing)
+      $(data.followElement).attr('following','true').text("Unfollow @"+username);
+    else
+      $(data.followElement).attr('following','false').text("Follow @"+username);
+});
+
+
+
+addon.port.on('Followed',function(data){
+	$(data.TheElement).addClass('retweeted');
+    $(loading).addClass('hide').removeClass('show');
+});
+
+
+addon.port.on('favIted',function(data){
+	$(data.TheElement).addClass('retweeted');
+    $(loading).addClass('hide').removeClass('show');
+});
 
 var tweetInput = $("<div>").attr("id","newTweet").attr("class","col-xs-12").append(
 
@@ -35,7 +64,7 @@ var tweetInput = $("<div>").attr("id","newTweet").attr("class","col-xs-12").appe
         $("<textarea>").attr("class","inputbox form-control").attr("placeholder","What's on your mind?"),
         $("<button>").html("Tweet about this page").attr("id","sendTweet").attr("class","btn btn-default pull-right")
         .click(function(){
-              sendTweet();
+              addon.port.emit('TweetSomething',{tweet:($(tweetInput).find("textarea").val()),in_reply_to_status_id:in_reply_to_status_id});
           })
         )
 
@@ -44,7 +73,33 @@ var tweetInput = $("<div>").attr("id","newTweet").attr("class","col-xs-12").appe
 
 
 
+  var follow = function(userId,followElement,username,alreadyFollowing){
 
+  	$(loading).addClass('show').removeClass('hide');
+  	addon.port.emit('FollowSomeone',{
+										userId:userId,
+										followElement:followElement,
+										username:username,
+										alreadyFollowing:alreadyFollowing
+									});
+  };
+
+  var reTweet = function(id,TheElement){
+    $(loading).addClass('show').removeClass('hide');
+  	addon.port.emit('reTweet',{
+										id:id,
+										TheElement:TheElement
+									});
+  };
+  
+
+  var favIt = function(id,TheElement){
+    $(loading).addClass('show').removeClass('hide');
+  	addon.port.emit('favIt',{
+										id:id,
+										TheElement:TheElement
+									});
+  };
 
 
       //$("#sendTweet");
