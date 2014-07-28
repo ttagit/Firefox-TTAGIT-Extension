@@ -44,7 +44,6 @@ addon.port.on('Followed',function(data){
 });
 
 
-
 addon.port.on('Followed',function(data){
 	$(data.TheElement).addClass('retweeted');
     $(loading).addClass('hide').removeClass('show');
@@ -439,3 +438,12 @@ function zeroPadding(n) {
 
   return n;
 }
+
+
+
+function setSidebarWidth(newwidth) {
+  //window.top.document.getElementById("sidebar-box").width=newwidth;
+}
+
+
+//setSidebarWidth('100%');
