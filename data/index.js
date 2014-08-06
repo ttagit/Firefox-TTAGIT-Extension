@@ -405,24 +405,26 @@ function normalizeTweetText(tweet) {
 
 function normalizeDateTime(date) {
 
-Date.prototype.getMonthName = function(lang) {
-    lang = lang && (lang in Date.locale) ? lang : 'en';
-    return Date.locale[lang].month_names[this.getMonth()];
+getMonthName = function(lang,date) {
+    var newDate = new Date(date);
+    lang = lang && (lang in locals) ? lang : 'en';
+    return locals[lang].month_names[newDate.getMonth()];
 };
 
-Date.prototype.getMonthNameShort = function(lang) {
-    lang = lang && (lang in Date.locale) ? lang : 'en';
-    return Date.locale[lang].month_names_short[this.getMonth()];
+getMonthNameShort = function(lang,date) {
+    var newDate = new Date(date);
+    lang = lang && (lang in locals) ? lang : 'en';
+    return locals[lang].month_names_short[newDate.getMonth()];
 };
 
-Date.locale = {
+locals = {
     en: {
        month_names: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
        month_names_short: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
     }
 };
   if (_.isDate(date)) {
-    return date.getDate() + " " + date.getMonthNameShort();
+    return date.getDate() + " " + getMonthNameShort('en',date);
     //return date.getFullYear() + "/" + zeroPadding(date.getMonth() + 1) + "/" + zeroPadding(date.getDate()) + " " + zeroPadding(date.getHours()) + ":" + zeroPadding(date.getMinutes()) + ":" + zeroPadding(date.getSeconds());
   } else {
     throw new Error("argument isn`t prototype of Date");
