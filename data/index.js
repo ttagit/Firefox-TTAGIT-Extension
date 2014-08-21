@@ -274,8 +274,8 @@ var tweetInput = $("<div>").attr("id","newTweet").attr("class","col-xs-12").appe
                   //tweet.entities.media
                   $("<div>").attr("class","border").html((normalizeTweetText(tweet))),
                   media,
-                  tweetInfo
-                      
+                  tweetInfo,
+                  source                      
                   )
                 
 

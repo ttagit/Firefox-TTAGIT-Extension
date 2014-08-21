@@ -1,9 +1,8 @@
 {
-  "name": "ttagit",
+  "name": "ttagit_mobile",
   "title": "TTAGIT",
-  "id": "jid1-U7usBQU5JLBWHA",
   "description": "TTAGIT FIREFOX extension",
   "author": "Hitesh Joshi <me@hiteshjoshi.com>",
   "license": "MPL 2.0",
-  "version": "2.2"
+  "version": "1.2"
 }
