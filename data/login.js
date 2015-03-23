@@ -1,6 +1,6 @@
 addon.port.on("pinSaved", function(isSuccess) {
   if (isSuccess === false)
-   	alert("There was some problem.");
+   	console.log("There was some problem.");
 });
 
 $(function(){
